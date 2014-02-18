@@ -187,6 +187,7 @@
     <Compile Include="Controllers\AccountControllerHelpers\RegisterValidator.cs" />
     <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="CustomExceptions\BadRequestException.cs" />
     <Compile Include="Global.asax.cs">
