@@ -20,6 +20,7 @@ namespace MiniTrello.Data
                 AutoPersistenceModel autoPersistenceModel = AutoMap.Assemblies(typeof(IEntity).Assembly)
                                                                    .Where(t => typeof(IEntity).IsAssignableFrom(t))
                     // .UseOverridesFromAssemblyOf<AccountOverride>()
+                                                                   
                                                                    .Conventions.Add(DefaultCascade.All());
 
                 return x => x.AutoMappings.Add(autoPersistenceModel);

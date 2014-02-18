@@ -196,6 +196,9 @@
     <Compile Include="Models\AccountLoginModel.cs" />
     <Compile Include="Models\AccountRegisterModel.cs" />
     <Compile Include="Models\AuthenticationModel.cs" />
+    <Compile Include="Models\OrganizationArchiveModel.cs" />
+    <Compile Include="Models\OrganizationGetModel.cs" />
+    <Compile Include="Models\OrganizationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

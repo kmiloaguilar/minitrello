@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Http;
 using AttributeRouting.Web.Http;
 using AutoMapper;
+using MiniTrello.Api.Models;
 using MiniTrello.Domain.Entities;
 using MiniTrello.Domain.Services;
 
@@ -37,23 +38,22 @@ namespace MiniTrello.Api.Controllers
             return _mappingEngine.Map<Organization, OrganizationModel>(organization);
         }
 
+        [AcceptVerbs("PUT")]
+        [PUT("organization/name/{accessToken}")]
+        public OrganizationModel UpdateName(string accessToken, [FromBody] OrganizationUpdateNameModel model)
+        {
+            var organization = _readOnlyRepository.GetById<Organization>(model.Id);
+            organization.Name = model.NewName;
+            organization = _writeOnlyRepository.Update(organization);
+            return _mappingEngine.Map<Organization, OrganizationModel>(organization);
+        }
+
 
     }
 
-    public class OrganizationGetModel
+    public class OrganizationUpdateNameModel
     {
         public long Id { get; set; }
-    }
-
-    public class OrganizationModel
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool IsArchived { get; set; }
-    }
-
-    public class OrganizationArchiveModel
-    {
-        public long Id { get; set; }
+        public string NewName { get; set; }
     }
 }
