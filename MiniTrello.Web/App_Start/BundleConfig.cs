@@ -23,7 +23,10 @@ namespace App.MiniTrello.Web
                 "~/scripts/filters.js",
                 "~/scripts/services.js",
                 "~/scripts/directives.js",
-                "~/scripts/controllers.js",
+                "~/scripts/Controllers/AboutControllers.js",
+                "~/scripts/Controllers/AccountControllers.js",
+                "~/scripts/Controllers/ErrorControllers.js",
+                "~/scripts/Controllers/HomeControllers.js",
                 "~/scripts/app.js"));
         }
     }
