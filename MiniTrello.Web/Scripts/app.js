@@ -20,7 +20,6 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                 url: '/',
                 templateUrl: '/views/index',
                 controller: 'HomeController'
-
             })
             .state('about', {
                 url: '/about',
@@ -29,7 +28,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
             })
             .state('login', {
                 url: '/login',
-                //layout: 'basic',
+                layout: 'basic',
                 templateUrl: '/views/login',
                 controller: 'AccountController'
             })
