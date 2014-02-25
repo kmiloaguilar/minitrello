@@ -156,6 +156,7 @@
     <Content Include="Scripts\Filters\filters.spec.js">
       <DependentUpon>filters.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Services\AccountServices.js" />
     <Content Include="Scripts\Services\services.js" />
     <Content Include="Scripts\Services\services.spec.js">
       <DependentUpon>services.js</DependentUpon>

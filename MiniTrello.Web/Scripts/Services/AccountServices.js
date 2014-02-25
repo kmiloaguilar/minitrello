@@ -1,15 +1,17 @@
-﻿angular.module('app.services').factory('AccountServices', ['$http', function ($http) {
+﻿'use strict';
 
-    var addToPresentationFactory = {};
+angular.module('app.services',[]).factory('AccountServices', ['$http', function ($http) {
 
-    addToPresentationFactory.saveTopic = function (data) {
-        return $http.post('savetopic', data);
+    var account = {};
+
+    account.login = function (data) {
+        return $http.post('http://minitrelloapi.apphb.com/login', data);
     };
 
-    addToPresentationFactory.getJson = function (reportTemplateId, reportEntityId) {
+    account.getJson = function(reportTemplateId, reportEntityId) {
         return $http.get('htmlTemplate/' + reportTemplateId + '/json/' + reportEntityId);
-    }
+    };
 
-    return addToPresentationFactory;
+    return account;
 
 }]);
