@@ -8,9 +8,6 @@ angular.module('app.services',[]).factory('AccountServices', ['$http', function 
         return $http.post('http://minitrelloapi.apphb.com/login', data);
     };
 
-    account.getJson = function(reportTemplateId, reportEntityId) {
-        return $http.get('htmlTemplate/' + reportTemplateId + '/json/' + reportEntityId);
-    };
 
     return account;
 

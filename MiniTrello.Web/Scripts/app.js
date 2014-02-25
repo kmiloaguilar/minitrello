@@ -14,24 +14,24 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
             .state('home', {
                 url: '/',
                 templateUrl: '/views/index',
-                controller: 'HomeCtrl'
+                controller: 'HomeController'
 
             })
             .state('about', {
                 url: '/about',
                 templateUrl: '/views/about',
-                controller: 'AboutCtrl'
+                controller: 'AboutController'
             })
             .state('login', {
                 url: '/login',
-                layout: 'basic',
+                //layout: 'basic',
                 templateUrl: '/views/login',
                 controller: 'AccountController'
             })
             .state('otherwise', {
                 url: '*path',
                 templateUrl: '/views/404',
-                controller: 'Error404Ctrl'
+                controller: 'ErrorController'
             });
 
         $locationProvider.html5Mode(true);
