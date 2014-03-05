@@ -142,6 +142,7 @@
       <DependentUpon>app.less</DependentUpon>
     </Content>
     <Content Include="Content\app.less" />
+    <Content Include="Content\Style.css" />
     <Content Include="Content\variables.less" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\Controllers\AboutController.js" />

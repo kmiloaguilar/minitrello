@@ -11,24 +11,15 @@ angular.module('app.controllers')
     .controller('AccountController', ['$scope', '$location', '$window', 'AccountServices', function ($scope, $location, $window, AccountServices) {
 
         
+        $scope.loginModel = { Email: '', Password: '' };
 
-        $scope.$root.title = 'AngularJS SPA | Sign In';
-
-        $scope.Email = "";
-
-        $scope.Password = "";
-
-        $scope.FirstName = "";
-
-        $scope.LastName = "";
-
-        $scope.ConfirmPassword = "";
-
+    $scope.registerModel = { Email: '', Password: '', FirstName: '', LastName: '', ConfirmPassword: '' };
+        
         // TODO: Authorize a user
         $scope.login = function () {
-            var model = { Email: $scope.Email, Password: $scope.Password };
+            
             AccountServices
-                .login(model)
+                .login($scope.loginModel)
                 .success(function (data, status, headers, config) {
                     $window.sessionStorage.token = data.token;
                     $scope.message = 'Welcome';
@@ -52,9 +43,8 @@ angular.module('app.controllers')
     };
 
     $scope.register = function() {
-        var model = { Email: $scope.Email, Password: $scope.Password, ConfirmPassword: $scope.ConfirmPassword, FirstName: $scope.FirstName, LastName: $scope.LastName };
         AccountServices
-            .register(model)
+            .register($scope.registerModel)
             .success(function (data, status, headers, config) {
                 console.log('data: ' + data);
             })

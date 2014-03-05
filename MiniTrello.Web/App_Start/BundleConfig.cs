@@ -14,7 +14,8 @@ namespace App.MiniTrello.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css"));
+            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css").Include("~/content/Style.css"));
+            
 
             //bundles.Add(new ScriptBundle("~/js/jquery").Include("~/scripts/vendor/jquery-{version}.js"));
 
