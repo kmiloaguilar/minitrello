@@ -29,6 +29,7 @@ namespace MiniTrello.Api.Controllers
             _registerValidator = registerValidator;
         }
 
+        [HttpPost]
         [POST("login")]
         public AuthenticationModel Login([FromBody] AccountLoginModel model)
         {
@@ -44,6 +45,7 @@ namespace MiniTrello.Api.Controllers
                 "Usuario o clave incorrecto");
         }
 
+        [AcceptVerbs("POST")]
         [POST("register")]
         public HttpResponseMessage Register([FromBody] AccountRegisterModel model)
         {

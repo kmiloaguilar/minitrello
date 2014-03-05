@@ -32,7 +32,6 @@ angular.module('app.controllers')
                   $scope.message = 'Error: Invalid user or password';
               });
             //$location.path('/');
-            return false;
         };
 
     $scope.goToRegister = function() {
@@ -46,13 +45,12 @@ angular.module('app.controllers')
         AccountServices
             .register($scope.registerModel)
             .success(function (data, status, headers, config) {
-                console.log('data: ' + data);
+                console.log(data);
             })
             .error(function (data, status, headers, config) {
-                console.log('data: ' + data);
+                console.log(data);
 
             });
-        return false;
     };
 
         $scope.$on('$viewContentLoaded', function () {
