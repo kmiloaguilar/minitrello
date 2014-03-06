@@ -17,20 +17,21 @@ angular.module('app.controllers')
         
         // TODO: Authorize a user
         $scope.login = function () {
-            
+
             AccountServices
                 .login($scope.loginModel)
-                .success(function (data, status, headers, config) {
-                    $window.sessionStorage.token = data.token;
-                    $scope.message = 'Welcome';
-                })
-                .error(function (data, status, headers, config) {
-                  // Erase the token if the user fails to log in
-                  delete $window.sessionStorage.token;
+              .success(function (data, status, headers, config) {
+                  console.log(data);
+                  $window.sessionStorage.token = data.Token;
+                  console.log($window.sessionStorage.token);
+              })
+              .error(function (data, status, headers, config) {
+                // Erase the token if the user fails to log in
+                delete $window.sessionStorage.token;
 
-                  // Handle login errors here
-                  $scope.message = 'Error: Invalid user or password';
-              });
+                // Handle login errors here
+                $scope.message = 'Error: Invalid user or password';
+            });
             //$location.path('/');
         };
 
@@ -46,10 +47,10 @@ angular.module('app.controllers')
             .register($scope.registerModel)
             .success(function (data, status, headers, config) {
                 console.log(data);
+                $scope.goToLogin();
             })
             .error(function (data, status, headers, config) {
                 console.log(data);
-
             });
     };
 

@@ -8,25 +8,12 @@ angular.module('app.services',[]).factory('AccountServices', ['$http', function 
     var baseLocalUrl = "http://localhost:1416";
     var baseUrl = baseLocalUrl;
 
-    account.login = function (data) {
-        console.log(baseUrl);
-        return $http.post(baseUrl + '/login', data);
+    account.login = function (model) {
+        return $http.post(baseUrl + '/login', model);
     };
 
     account.register = function (model) {
-        
-        return $http({
-            url: baseUrl + '/register',
-            method: 'POST',
-            data: model,
-            headers: { 'Content-Type': 'application/json' }
-        });
-        //    .success(function (data, status, headers, config) {
-        //    $scope.persons = data; // assign  $scope.persons here as promise is resolved here 
-        //}).error(function (data, status, headers, config) {
-        //    $scope.status = status;
-        //});
-        //return $http.post(baseUrl + '/register', model);
+        return $http.post(baseUrl + '/register', model);
     };
 
 
