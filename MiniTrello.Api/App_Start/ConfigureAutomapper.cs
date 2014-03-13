@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using MiniTrello.Api.Controllers;
-using MiniTrello.Api.Models;
+using MiniTrello.Domain.DataObjects;
 using MiniTrello.Domain.Entities;
 using MiniTrello.Infrastructure;
 

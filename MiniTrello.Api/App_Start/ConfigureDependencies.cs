@@ -1,8 +1,8 @@
 using Autofac;
 using AutoMapper;
 using MiniTrello.Api.Controllers.AccountControllerHelpers;
-using MiniTrello.Api.Models;
 using MiniTrello.Data;
+using MiniTrello.Domain.DataObjects;
 using MiniTrello.Domain.Services;
 using MiniTrello.Infrastructure;
 
