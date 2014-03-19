@@ -39,12 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataObjects\AccountBoardModel.cs" />
     <Compile Include="DataObjects\AccountLoginModel.cs" />
     <Compile Include="DataObjects\AccountRegisterModel.cs" />
     <Compile Include="DataObjects\AuthenticationModel.cs" />
+    <Compile Include="DataObjects\ChangePasswordModel.cs" />
     <Compile Include="DataObjects\OrganizationArchiveModel.cs" />
     <Compile Include="DataObjects\OrganizationGetModel.cs" />
     <Compile Include="DataObjects\OrganizationModel.cs" />
+    <Compile Include="DataObjects\UpdateAccountModel.cs" />
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\Board.cs" />
     <Compile Include="Entities\IEntity.cs" />

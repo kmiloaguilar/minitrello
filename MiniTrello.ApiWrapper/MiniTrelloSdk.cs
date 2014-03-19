@@ -29,6 +29,45 @@ namespace MiniTrello.ApiWrapper
                 return response.Data;
         }
 
+        public static  AccountRegisterModel Register(AccountRegisterModel registerModel)
+        {
+            var client = new RestClient(BaseUrl);
+            var request = InitRequest("/register", Method.POST, registerModel);
+            IRestResponse<AccountRegisterModel> response = client.Execute<AccountRegisterModel>(request);
+            return response.Data;
+        }
+
+        public static AccountLoginModel ChangePassword(ChangePasswordModel model, string token)
+        {
+            var client = new RestClient(BaseUrl);
+            var request = InitRequest("/Account/ChangePassword/"+token, Method.POST, model);
+            IRestResponse<AccountLoginModel> response = client.Execute<AccountLoginModel>(request);
+            return response.Data;
+        }
+
+        public static AccountLoginModel ForgotPassword(ChangePasswordModel model)
+        {
+            var client = new RestClient(BaseUrl);
+            var request = InitRequest("/Account/ForgotPassword/", Method.POST, model);
+            IRestResponse<AccountLoginModel> response = client.Execute<AccountLoginModel>(request);
+            return response.Data;
+        }
+
+        public static UpdateAccountModel UpdateAccount(UpdateAccountModel model, string token)
+        {
+            var client = new RestClient(BaseUrl);
+            var request = InitRequest("/UpdateAccount/"+token, Method.POST, model);
+            IRestResponse<UpdateAccountModel> response = client.Execute<UpdateAccountModel>(request);
+            return response.Data;
+        }
+
+        public static AccountBoardModel CreateNewBoard(AccountBoardModel model, string token)
+        {
+            var client = new RestClient(BaseUrl);
+            var request = InitRequest("Boards/createBoard/" + token, Method.POST, model);
+            IRestResponse<AccountBoardModel> response = client.Execute<AccountBoardModel>(request);
+            return response.Data;
+        }
         private static string BaseUrl
         {
             get { return ConfigurationManager.AppSettings["baseUrl"]; }

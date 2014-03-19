@@ -1,8 +1,11 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using AttributeRouting.Web.Http;
 using AutoMapper;
+using FizzWare.NBuilder;
 using MiniTrello.Domain.DataObjects;
 using MiniTrello.Domain.Entities;
 using MiniTrello.Domain.Services;
@@ -47,6 +50,19 @@ namespace MiniTrello.Api.Controllers
             organization = _writeOnlyRepository.Update(organization);
             return _mappingEngine.Map<Organization, OrganizationModel>(organization);
         }
+
+        [GET("organizations/{accessToken}")]
+        public List<OrganizationModel> GetAllForUser(string accessToken)
+        {
+            //obtener el usuario que pertenece al token
+            //validar la session
+            //var account = _readOnlyRepository.GetById<Account>(1);
+            //var mappedOrganizationModelList = _mappingEngine.Map<IEnumerable<Organization>,IEnumerable<
+            //OrganizationModel >> (account.Organizations).ToList();
+            //return mappedOrganizationModelList;
+            var organizations = Builder<OrganizationModel>.CreateListOfSize(10).Build().ToList();
+            return organizations;
+        } 
 
 
     }
