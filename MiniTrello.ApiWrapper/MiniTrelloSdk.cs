@@ -25,7 +25,7 @@ namespace MiniTrello.ApiWrapper
                 var client = new RestClient(BaseUrl);
                 var request = InitRequest("/login", Method.POST, loginModel);
                 IRestResponse<AuthenticationModel> response = client.Execute<AuthenticationModel>(request);
-                ConfigurationManager.AppSettings["accessToken"] = response.Data.Token;
+                //ConfigurationManager.AppSettings["accessToken"] = response.Data.Token;
                 return response.Data;
         }
 
@@ -70,7 +70,7 @@ namespace MiniTrello.ApiWrapper
         }
         private static string BaseUrl
         {
-            get { return ConfigurationManager.AppSettings["baseUrl"]; }
+            get { return "http://localhost:1416"; }
         }
 
         public static List<OrganizationModel> GetOrganization()

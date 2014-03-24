@@ -22,6 +22,12 @@ namespace MiniTrello.Win8Phone
             //BuildLocalizedApplicationBar();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var data = new  MiniTrello.ApiWrapper2.MiniTrelloW8Sdk();
+
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{

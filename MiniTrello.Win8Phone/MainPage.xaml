@@ -46,7 +46,16 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,10,14,-10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="69*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="378*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Login"  HorizontalAlignment="Left" Margin="265,4,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.458,-0.125"/>
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="0,-3,0,0" Grid.Row="0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="456" InputScope="EmailUserName"/>
+            <TextBox HorizontalAlignment="Left" Height="72" Margin="0,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="456" InputScope="Password"/>
 
         </Grid>
 
